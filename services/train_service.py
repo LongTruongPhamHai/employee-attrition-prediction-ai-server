@@ -14,15 +14,14 @@ from common.preprocess import data_preprocess
 from common.train_models import train_models
 from common.utils import save_model
 import json
-import numpy as np
 
 
 def make_json_friendly(results):
     friendly = {}
     for model_name, res in results.items():
         friendly[model_name] = res.copy()
-        if "pred_val" in res:
-            friendly[model_name]["pred_val"] = res["pred_val"].tolist()
+        # if "pred_val" in res:
+        #     friendly[model_name]["pred_val"] = res["pred_val"].tolist()
         if "pipeline" in res:
             friendly[model_name]["pipeline"] = str(res["pipeline"])
         if "val" in res:

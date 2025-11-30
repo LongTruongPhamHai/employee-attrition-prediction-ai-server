@@ -55,7 +55,7 @@ def train_models(preprocessor, X_train, y_train, X_val, y_val):
 
         results[name] = {
             "pipeline": pipeline,
-            "pred_val": y_val_pred,
+            # "pred_val": y_val_pred,
             "val": metrics,
             "params": model.get_params(),
         }

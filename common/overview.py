@@ -1,18 +1,5 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
-import json
-
-"""
-Age	    Attrition	    BusinessTravel	    DailyRate	    Department	    DistanceFromHome	    Education	    EducationField
-EmployeeCount	        EmployeeNumber	    EnvironmentSatisfaction	        Gender	                HourlyRate	    JobInvolvement
-JobLevel                JobRole	            JobSatisfaction	MaritalStatus	MonthlyIncome	        MonthlyRate	    NumCompaniesWorked
-Over18	OverTime	    PercentSalaryHike	PerformanceRating	            RelationshipSatisfaction	            StandardHours
-StockOptionLevel	    TotalWorkingYears	TrainingTimesLastYear	        WorkLifeBalance	        YearsAtCompany	YearsInCurrentRole
-YearsSinceLastPromotion	YearsWithCurrManager
-"""
-
-import matplotlib.pyplot as plt
-import seaborn as sns
 import math
 
 
@@ -142,6 +129,6 @@ def raw_data_overview(df, df_name, target_col=None):
         "target_distribution": target_distribution,
     }
 
-    raw_data_visualization(df, df_name, target_col)
+    # raw_data_visualization(df, df_name, target_col)
 
     return overview_results

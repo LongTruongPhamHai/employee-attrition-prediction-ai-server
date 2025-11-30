@@ -1,0 +1,109 @@
+{
+  "best_model_name": "Logistic Regression",
+  "best_model_metrics": {
+    "Precision": 0.5,
+    "Recall": 0.20833333333333334,
+    "F1": 0.29411764705882354,
+    "ROC-AUC": 0.583841463414634
+  },
+  "model_path": "D:\\DEV\\.Projects\\CodeDream\\AI-ML-DL-Course\\employee-attrition-prediction\\ai-module\\models\\best_model.pkl",
+  "all_results": {
+    "Dummy (most_frequent)": {
+      "pipeline": "Pipeline(steps=[('preprocess',\n                 Pipeline(steps=[('preprocess',\n                                  ColumnTransformer(transformers=[('num',\n                                                                   Pipeline(steps=[('imputer',\n                                                                                    SimpleImputer()),\n                                                                                   ('scaler',\n                                                                                    StandardScaler())]),\n                                                                   ['Age',\n                                                                    'DailyRate',\n                                                                    'DistanceFromHome',\n                                                                    'Education',\n                                                                    'EmployeeCount',\n                                                                    'EmployeeNumber',\n                                                                    'EnvironmentSatisfaction',\n                                                                    'HourlyRate',\n                                                                    'JobInvolvement',\n                                                                    'JobLevel',\n                                                                    'JobSatisfaction',\n                                                                    'MonthlyI...\n                                                                    'YearsSinceLastPromotion',\n                                                                    'YearsWithCurrManager']),\n                                                                  ('cat_ohe',\n                                                                   Pipeline(steps=[('imputer',\n                                                                                    SimpleImputer(strategy='most_frequent')),\n                                                                                   ('ohe',\n                                                                                    OneHotEncoder(handle_unknown='ignore',\n                                                                                                  sparse_output=False))]),\n                                                                   ['BusinessTravel',\n                                                                    'Department',\n                                                                    'EducationField',\n                                                                    'JobRole',\n                                                                    'MaritalStatus']),\n                                                                  ('drop',\n                                                                   'drop',\n                                                                   ['Over18'])]))])),\n                ('classifier', DummyClassifier(strategy='most_frequent'))])",
+      "val": {
+        "Precision": 0,
+        "Recall": 0,
+        "F1": 0,
+        "ROC-AUC": 0.5
+      },
+      "params": {
+        "constant": null,
+        "random_state": null,
+        "strategy": "most_frequent"
+      }
+    },
+    "Dummy (stratified)": {
+      "pipeline": "Pipeline(steps=[('preprocess',\n                 Pipeline(steps=[('preprocess',\n                                  ColumnTransformer(transformers=[('num',\n                                                                   Pipeline(steps=[('imputer',\n                                                                                    SimpleImputer()),\n                                                                                   ('scaler',\n                                                                                    StandardScaler())]),\n                                                                   ['Age',\n                                                                    'DailyRate',\n                                                                    'DistanceFromHome',\n                                                                    'Education',\n                                                                    'EmployeeCount',\n                                                                    'EmployeeNumber',\n                                                                    'EnvironmentSatisfaction',\n                                                                    'HourlyRate',\n                                                                    'JobInvolvement',\n                                                                    'JobLevel',\n                                                                    'JobSatisfaction',\n                                                                    'MonthlyI...\n                                                                    'YearsSinceLastPromotion',\n                                                                    'YearsWithCurrManager']),\n                                                                  ('cat_ohe',\n                                                                   Pipeline(steps=[('imputer',\n                                                                                    SimpleImputer(strategy='most_frequent')),\n                                                                                   ('ohe',\n                                                                                    OneHotEncoder(handle_unknown='ignore',\n                                                                                                  sparse_output=False))]),\n                                                                   ['BusinessTravel',\n                                                                    'Department',\n                                                                    'EducationField',\n                                                                    'JobRole',\n                                                                    'MaritalStatus']),\n                                                                  ('drop',\n                                                                   'drop',\n                                                                   ['Over18'])]))])),\n                ('classifier', DummyClassifier(strategy='stratified'))])",
+      "val": {
+        "Precision": 0.1956521739130435,
+        "Recall": 0.1875,
+        "F1": 0.19148936170212766,
+        "ROC-AUC": 0.5185467479674797
+      },
+      "params": {
+        "constant": null,
+        "random_state": null,
+        "strategy": "stratified"
+      }
+    },
+    "Logistic Regression": {
+      "pipeline": "Pipeline(steps=[('preprocess',\n                 Pipeline(steps=[('preprocess',\n                                  ColumnTransformer(transformers=[('num',\n                                                                   Pipeline(steps=[('imputer',\n                                                                                    SimpleImputer()),\n                                                                                   ('scaler',\n                                                                                    StandardScaler())]),\n                                                                   ['Age',\n                                                                    'DailyRate',\n                                                                    'DistanceFromHome',\n                                                                    'Education',\n                                                                    'EmployeeCount',\n                                                                    'EmployeeNumber',\n                                                                    'EnvironmentSatisfaction',\n                                                                    'HourlyRate',\n                                                                    'JobInvolvement',\n                                                                    'JobLevel',\n                                                                    'JobSatisfaction',\n                                                                    'MonthlyI...\n                                                                    'YearsSinceLastPromotion',\n                                                                    'YearsWithCurrManager']),\n                                                                  ('cat_ohe',\n                                                                   Pipeline(steps=[('imputer',\n                                                                                    SimpleImputer(strategy='most_frequent')),\n                                                                                   ('ohe',\n                                                                                    OneHotEncoder(handle_unknown='ignore',\n                                                                                                  sparse_output=False))]),\n                                                                   ['BusinessTravel',\n                                                                    'Department',\n                                                                    'EducationField',\n                                                                    'JobRole',\n                                                                    'MaritalStatus']),\n                                                                  ('drop',\n                                                                   'drop',\n                                                                   ['Over18'])]))])),\n                ('classifier',\n                 LogisticRegression(max_iter=500, random_state=42))])",
+      "val": {
+        "Precision": 0.5,
+        "Recall": 0.20833333333333334,
+        "F1": 0.29411764705882354,
+        "ROC-AUC": 0.583841463414634
+      },
+      "params": {
+        "C": 1,
+        "class_weight": null,
+        "dual": false,
+        "fit_intercept": true,
+        "intercept_scaling": 1,
+        "l1_ratio": null,
+        "max_iter": 500,
+        "multi_class": "deprecated",
+        "n_jobs": null,
+        "penalty": "l2",
+        "random_state": 42,
+        "solver": "lbfgs",
+        "tol": 0.0001,
+        "verbose": 0,
+        "warm_start": false
+      }
+    },
+    "KNN": {
+      "pipeline": "Pipeline(steps=[('preprocess',\n                 Pipeline(steps=[('preprocess',\n                                  ColumnTransformer(transformers=[('num',\n                                                                   Pipeline(steps=[('imputer',\n                                                                                    SimpleImputer()),\n                                                                                   ('scaler',\n                                                                                    StandardScaler())]),\n                                                                   ['Age',\n                                                                    'DailyRate',\n                                                                    'DistanceFromHome',\n                                                                    'Education',\n                                                                    'EmployeeCount',\n                                                                    'EmployeeNumber',\n                                                                    'EnvironmentSatisfaction',\n                                                                    'HourlyRate',\n                                                                    'JobInvolvement',\n                                                                    'JobLevel',\n                                                                    'JobSatisfaction',\n                                                                    'MonthlyI...\n                                                                    'YearsWithCurrManager']),\n                                                                  ('cat_ohe',\n                                                                   Pipeline(steps=[('imputer',\n                                                                                    SimpleImputer(strategy='most_frequent')),\n                                                                                   ('ohe',\n                                                                                    OneHotEncoder(handle_unknown='ignore',\n                                                                                                  sparse_output=False))]),\n                                                                   ['BusinessTravel',\n                                                                    'Department',\n                                                                    'EducationField',\n                                                                    'JobRole',\n                                                                    'MaritalStatus']),\n                                                                  ('drop',\n                                                                   'drop',\n                                                                   ['Over18'])]))])),\n                ('classifier',\n                 KNeighborsClassifier(n_neighbors=1, weights='distance'))])",
+      "val": {
+        "Precision": 0.1875,
+        "Recall": 0.125,
+        "F1": 0.15,
+        "ROC-AUC": 0.5096544715447154
+      },
+      "params": {
+        "algorithm": "auto",
+        "leaf_size": 30,
+        "metric": "minkowski",
+        "metric_params": null,
+        "n_jobs": null,
+        "n_neighbors": 1,
+        "p": 2,
+        "weights": "distance"
+      }
+    },
+    "Decision Tree": {
+      "pipeline": "Pipeline(steps=[('preprocess',\n                 Pipeline(steps=[('preprocess',\n                                  ColumnTransformer(transformers=[('num',\n                                                                   Pipeline(steps=[('imputer',\n                                                                                    SimpleImputer()),\n                                                                                   ('scaler',\n                                                                                    StandardScaler())]),\n                                                                   ['Age',\n                                                                    'DailyRate',\n                                                                    'DistanceFromHome',\n                                                                    'Education',\n                                                                    'EmployeeCount',\n                                                                    'EmployeeNumber',\n                                                                    'EnvironmentSatisfaction',\n                                                                    'HourlyRate',\n                                                                    'JobInvolvement',\n                                                                    'JobLevel',\n                                                                    'JobSatisfaction',\n                                                                    'MonthlyI...\n                                                                    'YearsWithCurrManager']),\n                                                                  ('cat_ohe',\n                                                                   Pipeline(steps=[('imputer',\n                                                                                    SimpleImputer(strategy='most_frequent')),\n                                                                                   ('ohe',\n                                                                                    OneHotEncoder(handle_unknown='ignore',\n                                                                                                  sparse_output=False))]),\n                                                                   ['BusinessTravel',\n                                                                    'Department',\n                                                                    'EducationField',\n                                                                    'JobRole',\n                                                                    'MaritalStatus']),\n                                                                  ('drop',\n                                                                   'drop',\n                                                                   ['Over18'])]))])),\n                ('classifier',\n                 DecisionTreeClassifier(max_depth=9, min_samples_leaf=5,\n                                        random_state=42))])",
+      "val": {
+        "Precision": 0.2558139534883721,
+        "Recall": 0.22916666666666666,
+        "F1": 0.24175824175824176,
+        "ROC-AUC": 0.5495426829268293
+      },
+      "params": {
+        "ccp_alpha": 0,
+        "class_weight": null,
+        "criterion": "gini",
+        "max_depth": 9,
+        "max_features": null,
+        "max_leaf_nodes": null,
+        "min_impurity_decrease": 0,
+        "min_samples_leaf": 5,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0,
+        "monotonic_cst": null,
+        "random_state": 42,
+        "splitter": "best"
+      }
+    }
+  }
+}

@@ -114,3 +114,5 @@ numpy
 scikit-learn
 joblib
 pydantic
+
+uvicorn main:app --reload
