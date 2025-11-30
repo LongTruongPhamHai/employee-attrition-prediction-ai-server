@@ -23,7 +23,7 @@ def make_json_friendly(results):
         # if "pred_val" in res:
         #     friendly[model_name]["pred_val"] = res["pred_val"].tolist()
         if "pipeline" in res:
-            friendly[model_name]["pipeline"] = str(res["pipeline"])
+            del friendly[model_name]["pipeline"]
         if "val" in res:
             friendly[model_name]["val"] = {k: float(v) for k, v in res["val"].items()}
     return friendly
@@ -63,7 +63,6 @@ def train_services():
     return {
         "best_model_name": best_model_name,
         "best_model_metrics": results_json_ready[best_model_name]["val"],
-        "model_path": BEST_MODEL_PATH,
         "all_results": results_json_ready,
     }
 

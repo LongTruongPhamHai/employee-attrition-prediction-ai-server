@@ -57,7 +57,7 @@ def train_models(preprocessor, X_train, y_train, X_val, y_val):
             "pipeline": pipeline,
             # "pred_val": y_val_pred,
             "val": metrics,
-            "params": model.get_params(),
+            # "params": model.get_params(),
         }
 
         joblib.dump(pipeline, os.path.join(MODEL_DIR, f"{name}.pkl"))
