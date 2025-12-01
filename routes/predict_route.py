@@ -1,4 +1,3 @@
-# routes/predict_route.py
 from fastapi import APIRouter, HTTPException
 from services.predict_service import predict_service
 

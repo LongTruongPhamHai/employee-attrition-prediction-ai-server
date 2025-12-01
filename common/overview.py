@@ -66,7 +66,7 @@ def raw_data_visualization(df, df_name, target_col=None):
     plt.show()
 
     cat_cols = dtype_df[dtype_df["dtype_group"] == "category"]["column"].tolist()
-    n_cols = 3  # số cột trong grid
+    n_cols = 3
     n_rows = math.ceil(len(cat_cols) / n_cols)
     if cat_cols:
         fig_cat, axes = plt.subplots(n_rows, n_cols, figsize=(n_cols * 6, n_rows * 5))
