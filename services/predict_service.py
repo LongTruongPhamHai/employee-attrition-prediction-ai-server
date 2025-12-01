@@ -1,16 +1,24 @@
-from common.utils import load_model
+from common.utils import load_model_by_name
 from config.settings import MODEL_DIR
 import pandas as pd
 
 
-def predict_service(new_data, model_name):
-    model_path = ""
+def predict_service(new_data: dict, model_name: str):
+    import pandas as pd
+    from common.utils import load_model_by_name
+    from config.settings import MODEL_DIR
 
-    # match(model_name):
-    #     case ''
+    df = pd.DataFrame([new_data])
+    model = load_model_by_name(MODEL_DIR, model_name)
 
-    pipeline = load_model(MODEL_DIR)
+    pred = model.predict(df)[0]
 
-    y_pred = pipeline.predict(new_data)
+    if hasattr(pred, "item"):
+        pred = pred.item()
 
-    return result
+    proba = None
+    if hasattr(model, "predict_proba"):
+        proba_array = model.predict_proba(df)[0]
+        proba = proba_array.tolist()
+
+    return {"model": model_name, "prediction": pred, "probability": proba}
